@@ -10,7 +10,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
         <title>Project2</title>
     </head>
 
@@ -193,30 +194,52 @@
                                 </tbody>
                             </table>
                             <button onclick="getFetchData()" class="btn btn-info">Cart Summery</button>
+                            <div  class="table-responsive">
+                                <table class="table border">
+                                    <tbody id="cart-list">
+
+                                    </tbody>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
             </div>
+            
         
     </div>
         <!--Left sidebar Section End-->
 
         <script>
-            var array = [];
-        
+            
+            var array;
             function getData(id,name,price,qty)
             {
+                array = JSON.parse(localStorage.getItem('product')) || [];
                 var obj = {"ProductID":id,"ProductName":name,"Price":price,"Quntity":qty}
-                array.push(JSON.stringify(obj));
-                localStorage.setItem("key",array); 
+                array.push(obj);
+                obj=JSON.stringify(array);
+                localStorage.setItem("product",obj); 
                 
                
             }
             
             function getFetchData()
             {
-                console.log(localStorage.getItem("key"));
+                var str = "";
+                var get,create,text,i;
+                 create = JSON.parse(localStorage.getItem("product"));
+                 
+                create.forEach(product => {
+                 str += "<tr>";
+                 str += "<td>"+product.ProductID+"</td>";    
+                 str += "<td>"+product.ProductName+"</td>";
+                 str += "<td>"+product.Price+"</td>";
+                 str += "<td>"+product.Quntity+"</td></tr>";
+                
+                                       
+                });
+                document.getElementById("cart-list").innerHTML = str;
             }
         
             
@@ -246,5 +269,8 @@
         <script src="/js/jquery.min.js"></script>
         <script src="/js/popper.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>

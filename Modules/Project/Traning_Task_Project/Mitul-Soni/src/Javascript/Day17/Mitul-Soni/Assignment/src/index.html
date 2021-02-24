@@ -180,7 +180,7 @@
             </div>
             <div class="col-md-9">
                 <div class="error-box mt-5 text-danger">
-                    <h6 id="error"></h6>
+                    <h6 id="error" class="text-center"></h6>
                 </div>
                 
                 <form name="frmname">
@@ -251,8 +251,9 @@
                         <div class="col-md-12">
                             <div class="form form-inline">
                                 <label for="" class="form-group">Gender</label>
-                                <input type="radio" id="radiobtn" value="male" class="ml-3">Male
-                                <input type="radio" id="radiobtn" value="female" class="ml-3">Female
+                                <input type="radio" name="radio" value="Male" id="Male" class="ml-3"><label for="Male">Male</label>
+				                <input type="radio" name="radio" value="Female" id="Female" class="ml-3"><label for="Female">Female</label>
+				
                             </div>
                         </div>
                     </div>
@@ -290,47 +291,47 @@
                 if(id == "")
                 {
                     missing = true;
-                    strFileds += "Please Enter Employee ID\n";
+                    strFileds += "Please Enter Employee ID <br>";
                 }
                 if(id.length != 5)
                 {
                     missing = true;
-                    strFileds += "Please Enter 5 Letter in Employee ID\n";
+                    strFileds += "Please Enter 5 Letter in Employee ID <br>";
                 }
                 if(name == "")
                 {
                     missing =true;
-                    strFileds += "Please Enter Employee Name\n";
+                    strFileds += "Please Enter Employee Name <br>";
                 }
                 if(age == "")
                 {
                     missing = true;
-                    strFileds += "Please Enter Age\n";
+                    strFileds += "Please Enter Age <br>";
                 }
                 if(isNaN(age))
                 {
                     missing = true;
-                    strFileds += "Age Should be Number\n";
+                    strFileds += "Age Should be Number <br>";
                 }
                 if(loc == "select")
                 {
                     missing = true;
-                    strFileds += "Please Select Location\n";
+                    strFileds += "Please Select Location <br>";
                 }
                 if(salary == "")
                 {
                     missing = true;
-                    strFileds += "Please Enter Salary\n";
+                    strFileds += "Please Enter Salary <br>";
                 }
                 if(email == "")
                 {
                     missing = true;
-                    strFileds += "Please Enter Email\n";
+                    strFileds += "Please Enter Email <br>";
                 }
                 if(doj == "")
                 {
                     missing = true;
-                    strFileds += "Please Enter Date Of Join\n";
+                    strFileds += "Please Enter Date Of Join <br>";
                 }
                 if(missing)
                 {
