@@ -1,0 +1,69 @@
+.fa-cart-plus
+{
+    color: white;
+}
+
+#elementary
+{
+    background-color:#D0D3D4;
+}
+.rounded-circle
+{
+    
+    height: 200px;
+    width: 220px;
+}
+#navbar-header
+{
+    background-color: #00004d;
+}
+#navbar-header a
+{
+    color: white;
+}
+#navbar-header a:hover
+{
+    border-bottom: 1px solid white;
+}
+hr.new1 {
+    border: 1px solid sandybrown;
+  }
+
+hr.new2 {
+    border: 1px solid sandybrown;
+    width: 60%;
+  }
+
+#globleDesktop img
+{
+    margin-top: -50px;
+    height: 40px;
+    width: 40px;
+}
+
+#intro-part
+{
+    background-color: #00004d;
+}
+
+.card-body img
+{
+    height: 50px;
+    width: 50px;
+    margin-top: -40px;
+}
+
+#form
+{
+    background-color: #F5F5DC;
+}
+
+#footer
+{
+    background-color: #191970;
+}
+
+#second-footer
+{
+    background-color: darkblue;
+}
